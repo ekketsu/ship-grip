@@ -35,8 +35,8 @@ def load_previous_products(output_file):
         try:
             wb = load_workbook(output_file)
             ws = wb.active
-            for row in ws.iter_rows(min_row=2, values_only=True):  # Commence à la deuxième ligne pour ignorer les en-têtes
-                lien = row[-1]  # Le lien est supposé être dans la dernière colonne
+            for row in ws.iter_rows(min_row=2, values_only=True):  
+                lien = row[-1]  #ptn elle etait longue
                 if lien:
                     previous_links.add(lien)
             logger.info(f"{len(previous_links)} produits chargés depuis le fichier précédent.")
